@@ -137,6 +137,10 @@ const getWeatherData = async () => {
       hour.currentTime = utc + 1000 * weatherData.data.timezone_offset;
     });
 
+    // Flicker Delay
+
+    await new Promise((res) => setTimeout(res,300));
+
     return weatherData.data;
   } catch (err) {
     console.log(err);
